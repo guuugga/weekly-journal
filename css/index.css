@@ -1,0 +1,268 @@
+/* СИСТЕМНЫЕ НАСТРОЙКИ */
+
+    /* Подсказка для браузеров, что есть тёмная/светлая тема. */
+
+:root {
+    color-scheme: light dark;
+}
+
+    /* Тело страницы */
+
+body {
+    font-size: 18px;
+    color: #1D1D1F;
+    background-color: var(--color-bg);
+    font-family: 'SF Pro Display', serif;
+    overflow-x: hidden;
+}
+
+/* Шаблоны */
+
+    /* ПЕРЕХОД С БОЛЬШИМ ТЕКСТОМ */
+    .transition {
+        font-family: 'Canopee';
+        color: var(--color-bg);
+        background-color: var(--color-box-bg);
+        font-size: 120px;
+        letter-spacing: 0.17em;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 10px;
+        
+    }
+
+/* Шапка сайта */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 99px;
+    border-bottom: 1px solid var(--color-second);
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 70px;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.nav__item {
+    margin-right: 25px;
+}
+
+.nav__item:last-child {
+    margin-right: 0;
+}
+
+.nav__link {
+    color: var(--color-first);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.05em;
+}
+
+.header-logo {
+    transform: translate(-20%);
+}
+
+    /* СМЕНА ТЕМЫ */
+
+.switcher {
+    position: relative;
+    padding: 1px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: none;
+}
+
+.switcher__radio {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    width: 32px;
+    height: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    transition: filter 0.2s ease-in;
+}
+
+.switcher__radio:focus {
+    outline: none;
+}
+
+.switcher__radio--light {
+    background-image: url(../img/icons/color-scheme-light.svg);
+}
+
+.switcher__radio--auto {
+    background-image: url(../img/icons/color-scheme-auto.svg);
+}
+
+.switcher__radio--dark {
+    background-image: url(../img/icons/color-scheme-dark.svg);
+}
+.switcher__status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    box-shadow: 0 0 0 2px var(--color-second);
+    border-radius: 18px;
+    background-repeat: no-repeat;
+    background-image: url(../img/icons/color-scheme-switch.svg);
+    background-size: 35px;
+    background-position: center;
+    transition: background-position 0.2s ease-in;
+}
+
+.switcher__radio:focus-visible ~ .switcher__status {
+    box-shadow: 0 0 0 2px #1D1D1F;
+}
+
+.switcher__radio--light:checked ~ .switcher__status {
+    background-position: left center;
+}
+
+.switcher__radio--dark:checked ~ .switcher__status {
+    background-position: right center;
+}
+
+/* Бургерное меню */
+
+.burger {
+    position: relative;
+    width: 40px;
+    height: 15px;
+    display: none;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+    /* Линии бургера */
+
+.burger__line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-box-bg);
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.burger::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-box-bg);
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, bottom 0.3s ease-in-out;
+}
+
+
+/* MAIN */
+
+    /* Ограничивающий container */
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 580px);
+    row-gap: 35px;
+    column-gap: 20px;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+/* Раздел - Популярные посты */
+
+.popular__title {
+    margin-bottom: 50px;
+}
+
+.popular__card {
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 18px;
+    padding: 20px;
+    transition: 0.6s;
+}
+
+.popular__card:hover {
+    transform: scale(1.019);
+    transition: 0.6s;
+}
+
+.popular__card--date {
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    color: var(--color-second);
+}
+
+.popular__card--title {
+    color: #1D1D1F;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+    margin-top: 105px;
+}
+
+
+/* Раздел - Все посты */
+
+.articles__title {
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
+
+.post {
+    border-radius: 18px;
+    transition: 0.5s;
+}
+
+.post:hover {
+    transform: scale(1.01);
+    transition: 0.5s;
+}
+
+.post__img {
+    width: 100%;
+    height: 298px;
+    border-radius: 18px 18px 0px 0px;
+}
+
+.post__info {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0px 0px 18px 18px;
+}
+
+.post__info--title {
+    color: #1D1D1F;
+    font-weight: 500;
+    font-size: 36px;
+    letter-spacing: 0.05em;
+}
+
+.post__info--desc {
+    color: var(--color-second);
+    font-size: 28px;
+    letter-spacing: 0.05em;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 105px;
+}
+
+.post__info--link {
+    color: var(--color-second);
+}

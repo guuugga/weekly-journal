@@ -1,0 +1,22 @@
+:root {
+	--color-first: #1D1D1F;
+	--color-second: #6e6e73;
+	--color-bg: #f5f5f7;
+	--color-box-bg: #1D1D1F;
+
+	--box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.switcher__radio {
+	filter: invert(0);
+	cursor: pointer;
+}
+
+.switcher__radio:checked {
+	filter: invert(1);
+	cursor: default;
+}
+
+.switcher__status {
+	filter: invert(0);
+}

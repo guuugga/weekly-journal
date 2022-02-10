@@ -1,0 +1,26 @@
+:root {
+	--color-first: #f5f5f7;
+	--color-second: #6e6e73;
+	--color-bg: #1d1d1f;
+	--color-box-bg: #f5f5f7;
+	
+	--box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.header-logo {
+    filter: invert(1);
+}
+
+.switcher__radio {
+	filter: invert(1);
+	cursor: pointer;
+}
+
+.switcher__radio:checked {
+	filter: invert(0);
+	cursor: default;
+}
+
+.switcher__status {
+	filter: invert(1);
+}
